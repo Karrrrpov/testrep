@@ -14,7 +14,7 @@
 # print(end)
 
 
-
+#new
 #ДОМАШКА ПОВЫШЕННАЯ СЛОЖНОСТЬ
 
 class Person:
