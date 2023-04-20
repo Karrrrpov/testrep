@@ -1,22 +1,33 @@
-# import time
+# # import time
+# #
+# # def fido(x):
+# #     if x == 0:
+# #         return 0
+# #     elif x == 1:
+# #         return 1
+# #     else:
+# #         return fido(x - 1) + fido(x - 2)
+# #
+# # start = time.time()
+# # print(fido(34))
+# # end = time.time() - start
+# # print(end)
 #
-# def fido(x):
-#     if x == 0:
-#         return 0
-#     elif x == 1:
-#         return 1
-#     else:
-#         return fido(x - 1) + fido(x - 2)
+# #!!!!!!!Пример декоратора с запуском (сделать также)!!!!!!!!
+# # def combine_decs(*decs):
+# #     def deco(f):
+# #         for dec in decs:
+# #             f = dec(f)
+# #         return f
+# #
+# #     return deco
+# #
+# # @allure.title('Пакеты размещений. Проверка публикации объявления с мульти из пакета на публикацию')
+# #     def test_79210_buy_package_commercial_and_published_multilisting(self):
 #
-# start = time.time()
-# print(fido(34))
-# end = time.time() - start
-# print(end)
-
-
-#new
-#ДОМАШКА ПОВЫШЕННАЯ СЛОЖНОСТЬ
-
+# #new
+# #ДОМАШКА ПОВЫШЕННАЯ СЛОЖНОСТЬ
+#
 class Person:
     def __init__(self, firstName, lastName, mail, phone, workplace):
         self.firstName = firstName
@@ -57,23 +68,29 @@ class AddressBook:
                 person = Person(firstName, lastName, mail, phone, workplace)
                 self.add_person(person)
 
-#book = AddressBook()
+                # @contextmanager
+                # def processor():
+                #     print('--> start processing')
+                #     yield
+                #     print('<-- stop processing')
 
-#person1 = Person("Тест", "Тестович", "test@mail.ru", "88005553535", "ЦИАН")
-#person2 = Person("Боб", "Марли", "bob@gmail.com", "87654563211", "Авито")
+# book = AddressBook()
+#
+# person1 = Person("Тест", "Тестович", "test@mail.ru", "88005553535", "ЦИАН")
+# person2 = Person("Боб", "Марли", "bob@gmail.com", "87654563211", "Авито")
+#
+# book.add_person(person1)
+# book.add_person(person2)
 
-#book.add_person(person1)
-#book.add_person(person2)
+# book.show_people()
+#
+# book.delete_person(person1)
 
-#book.show_people()
-
-#book.delete_person(person1)
-
-#book.show_people()
-
-#book.save_to_file('people.txt')
+# book.show_people()
+#
+# book.save_to_file('people.txt')
 newBook = AddressBook()
 newBook.load_from_file('people.txt')
 newBook.show_people()
-
-#book.show_people()
+#
+# book.show_people()
