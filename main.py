@@ -36,7 +36,7 @@ class FileManager:
         if self.file:
             self.file.close()
 
-
+#сheckout и get pu
 
 with FileManager('example.txt') as file:
     for line in file:
