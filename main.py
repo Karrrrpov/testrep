@@ -22,6 +22,7 @@ import time
 # print("Ответ:", result)
 # print("время работы программы:", execution_time)
 
+#sdfsdf
 class FileManager:
     def __init__(self, filename):
         self.filename = filename
