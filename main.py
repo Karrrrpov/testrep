@@ -1,27 +1,47 @@
 import time
 
-def watch_time(func):
-    def checktime(*args, **kwargs):
-        start = time.time()
-        result = func(*args, **kwargs)
-        end = time.time()
-        execution_time = end - start
-        checktime.execution_time = execution_time
-        return result
-    return checktime
-@watch_time
-def factorial(x):
-    if x == 0 or x == 1:
-        return 1
-    else:
-        return x * factorial(x - 1)
+# def watch_time(func):
+#     def checktime(*args, **kwargs):
+#         start = time.time()
+#         result = func(*args, **kwargs)
+#         end = time.time()
+#         execution_time = end - start
+#         checktime.execution_time = execution_time
+#         return result
+#     return checktime
+# @watch_time
+# def factorial(x):
+#     if x == 0 or x == 1:
+#         return 1
+#     else:
+#         return x * factorial(x - 1)
+#
+# result = factorial(5)
+# execution_time = factorial.execution_time
+#
+# print("Ответ:", result)
+# print("время работы программы:", execution_time)
 
-result = factorial(5)
-execution_time = factorial.execution_time
+class FileManager:
+    def __init__(self, filename):
+        self.filename = filename
+        self.file = None
 
-print("Ответ:", result)
-print("время работы программы:", execution_time)
+    def __enter__(self):
+        self.file = open(self.filename, 'r')
+        return self.file
 
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self.file:
+            self.file.close()
+
+
+
+with FileManager('example.txt') as file:
+    for line in file:
+        print(line.strip())
+
+# Контекстный менеджер автоматически закроет файл при выходе из контекста
 
 # #
 # # #!!!!!!!Пример декоратора с запуском (сделать также)!!!!!!!!
